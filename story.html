@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+   <link rel="stylesheet" href="radar-chart.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+        <script type="text/javascript" src="radar-chart.js"></script>
+        <script type="text/javascript" src="scatter.js"></script>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        
+        <title>Interactive Visulization on Australian Open Men's Tennis matches</title>
+</head>
+<body>
+<div class="container-fluid" style="margin: 10px">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link" href="index.html">Home</a>
+        <a class="flex-sm-fill text-sm-center nav-link active" href="#">Report</a>
+    </nav>
+    <br>
+    <div class="card">
+        <h4 class="card-header">Analysis Interactive	Visualization </h4>
+        <div class="card-block">
+            <p class="card-text">
+                The given visualisation provides a comprehensive description of the 10 years Australian Open Men's Tennis Matches
+                using interactions.
+            </p>
+            <div>
+                Firstly, Data Cleaning is performed on the dataset. Missing values in the data is handled by deleting the entire row in the dataset. Then data analysis is performed from the year 2004 to 2014 on the selected 6 players. In Tennis game, there exists a psychological advantage to win first and second point in a set. If the player wins points on the first and second serve on a row. This indirectly sends a dominance and player form message and create extra stress on the opponent. This stress on the opponent can in turn can effect the his overall performace during the match. Based on my analysis, a decrease trend is observed on the opponent return percentage when the player has higher chances of winning the first and second point during match. The Scatter-Bubble Plot demonstrates this Decreased pattern of Opponent Return Winning chances with an increase in player's winning first two points in the match. We can also observe the Players total points scored is also decreased with an increase in player winning first and second point during the game. There are three interesting observations based on the analysis done. 
+                <ul>
+                    <li>
+                        Rafael Nadal consistently maintained lower error points against his opponent in every match. Though Opponent have more Ace points than Rafael Nadal, Rafael Nadal managed to win the match with his overall performance.
+                    </li>
+                    <li>
+                        Roger Federer has scored more Ace points than his opponents in most of the matches he won.
+                    </li>
+                    <li>
+                        In every match, Andy Murray has higher first point winning percentage in comparision with his opponents.
+                    </li>
+                    
+                </ul>
+                Hovering over each scatter bubble the Radar chart gives quick comparision between player and his opponent performance during each match. The bright Cyan color shows the player statistics and bright Coral pink shows the opponent statistics during the match. The Player stats are scaled accordingly for each of the different axes to view the difference between player and opponent statistics clearly. Set of vibrant colors are used in both scatter bubble plot and Radar chart so that distinction is clearly visible. The key aspects used to visualise the player's strengths and weaknesses are given in the table below.
+
+            </div>
+            <br>
+            <div class="card-text">
+                <table class="table table-bordered">
+                    <caption>The key aspects used to visualise the player's strengths and weaknesses</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Key Aspect</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Reason</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">First Point Won</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                First Point Won is scoring first point during each set of the match. This is an important measure
+                                as it has psychological advantage over his opponent.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Second Point Won</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                Second Point won is scoring second point during each set of the match. This is an important measure as it shows the dominance of the player and has psychological effect on the opponents performace. Making the opponent more stressed can lead to make more errors.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">First Serve</td>
+                            <td>Service Variable</td>
+                            <td>
+                                First Serve is the percetage of player serving inside the service box without making errors. This is a good measure as players make more errors during their first serve if first serve is without any errors which inturn player will have less error points.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Net</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                Net is Player approches net and win the points percentage. This is a good measure as it shows player flexibility and reflex action.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Ace</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                Ace is a good serve that was not received by the opponent. This is an important measure
+                                as aces lead to winner points.
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td scope="row">Return</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                Return is the point won by returning the serve without any error. This is an important factor as it signifies that the player can return the service with ease.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Error</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                This is the point of mistakes. Errors are important to tally as they let us know about the
+                                areas where the player needs to improve.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Total</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                This is the total points won of the game. Total points won in the game might also include
+                                the points that were lost by the opponent and not just won by the player.
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Scripts-->
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="d3-tip.js"></script>
+<script src="d3-legend.min.js"></script>
+</body>
+</html>
